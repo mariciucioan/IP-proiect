@@ -1,0 +1,38 @@
+<resources>
+    <!-- Reply Preference -->
+    <string-array name="noHours">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+
+    <string-array name="hours">
+        <item>1 Hour</item>
+        <item>2 Hours</item>
+        <item>3 Hours</item>
+        <item>4 Hours</item>
+        <item>5 Hours</item>
+        <item>6 Hours</item>
+        <item>7 Hours</item>
+        <item>8 Hours</item>
+    </string-array>
+
+    <string-array name="noMinutes">
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+        <item>45</item>
+    </string-array>
+
+    <string-array name="minutes">
+        <item>10 Minutes</item>
+        <item>20 Minutes</item>
+        <item>30 Minutes</item>
+        <item>45 Minutes</item>
+    </string-array>
+</resources>
