@@ -28,8 +28,8 @@
     <string name="status_transit">Status: TRANSIT</string>
     <string name="status_problems">Status: HAVING PROBLEMS</string>
     <string name="working_at">Working at:</string>
-    <string name="surname">Surname:</string>
-    <string name="name">Name:</string>
+    <string name="surname">Second name:</string>
+    <string name="name">First name:</string>
     <string name="deliver_to">Deliver to:</string>
     <string name="products_to_deliver">Products to deliver:</string>
     <string name="delivery_due">Delivery due:</string>

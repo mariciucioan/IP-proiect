@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
@@ -12,6 +13,10 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 public class UserFragment extends Fragment {
+
+    TextView firstNameTextView;
+    TextView secondNameTextView;
+    TextView workingAtTextView;
 
     public UserFragment() {
         // Required empty public constructor
@@ -32,12 +37,15 @@ public class UserFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        View view = getView();
-        if (view == null)
+        if (getView() == null)
             return;
 
         FloatingActionButton fabSupport = getView().findViewById(R.id.fabSupport);
         FloatingActionButton fabRefill = getView().findViewById(R.id.fabRefill);
+
+        firstNameTextView = getView().findViewById(R.id.firstNameTW);
+        secondNameTextView = getView().findViewById(R.id.secondNameTW);
+        workingAtTextView = getView().findViewById(R.id.WorkingAtTW);
 
         fabSupport.setOnClickListener(new View.OnClickListener() {
             @Override
