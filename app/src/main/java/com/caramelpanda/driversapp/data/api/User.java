@@ -1,14 +1,16 @@
 package com.caramelpanda.driversapp.data.api;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
     private int id; // <- the userid of driver
     private String username; // <- the user
     private String email; // <- The email
+    private String password; // <- The password
 
     // To add to the api:
     // private String firstName;
     // private String secondName;
-    // private String password;
 
 
     public int getId() {
@@ -21,5 +23,9 @@ public class User {
 
     public String getEmail() {
         return email;
+    }
+
+    public String getPassword() {
+        return password;
     }
 }

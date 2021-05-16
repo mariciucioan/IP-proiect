@@ -1,34 +1,31 @@
 package com.caramelpanda.driversapp.data;
 
-public class Account {
+import com.caramelpanda.driversapp.data.api.Driver;
+import com.caramelpanda.driversapp.data.api.Institution;
+import com.caramelpanda.driversapp.data.api.User;
 
-    private String user;
-    private String pass;
-    private String institutionName;
+import java.io.Serializable;
 
-    // Will be added later
+public class Account implements Serializable {
 
-//    private final String firstName;
-//    private final String secondName;
+    private User user;
+    private Institution institution;
+    private Driver driver;
 
-    public Account(String user, String pass) {
+    public Account(User user, Driver driver, Institution institution) {
         this.user = user;
-        this.pass = pass;
+        this.institution = institution;
     }
 
-    public String getUser() {
+    public User getUser() {
         return user;
     }
 
-    public String getPass() {
-        return pass;
+    public Institution getInstitution() {
+        return institution;
     }
 
-    public String getInstitutionName() {
-        return institutionName;
-    }
-
-    public void setInstitutionName(String institutionName) {
-        this.institutionName = institutionName;
+    public Driver getDriver() {
+        return driver;
     }
 }

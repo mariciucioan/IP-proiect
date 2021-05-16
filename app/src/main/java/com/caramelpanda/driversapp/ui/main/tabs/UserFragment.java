@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 import com.caramelpanda.driversapp.R;
+import com.caramelpanda.driversapp.data.Account;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -17,6 +18,9 @@ public class UserFragment extends Fragment {
     TextView firstNameTextView;
     TextView secondNameTextView;
     TextView workingAtTextView;
+    TextView statusTextView;
+
+    Account account;
 
     public UserFragment() {
         // Required empty public constructor
@@ -31,6 +35,8 @@ public class UserFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
+        account = (Account) getActivity().getIntent().getSerializableExtra("user");
         return inflater.inflate(R.layout.fragment_user, container, false);
     }
 
@@ -46,6 +52,7 @@ public class UserFragment extends Fragment {
         firstNameTextView = getView().findViewById(R.id.firstNameTW);
         secondNameTextView = getView().findViewById(R.id.secondNameTW);
         workingAtTextView = getView().findViewById(R.id.WorkingAtTW);
+        statusTextView = getView().findViewById(R.id.statusTW);
 
         fabSupport.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,5 +69,11 @@ public class UserFragment extends Fragment {
                         .setAction("Action", null).show();
             }
         });
+
+        System.out.println(account);
+
+
+//        workingAtTextView.setText(account.getInstitution().getName());
+//        statusTextView.setText(account.getDriver().isDisponibil() ? "WAITING" : "DELIVERING");
     }
 }

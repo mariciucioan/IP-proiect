@@ -2,7 +2,9 @@ package com.caramelpanda.driversapp.data.api;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Institution {
+import java.io.Serializable;
+
+public class Institution implements Serializable {
     private int id;
 
     @SerializedName("nume")

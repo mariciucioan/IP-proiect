@@ -14,14 +14,19 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Parser {
-
     final String apiUrl = "http://ip-lab.herokuapp.com/";
-    final String authToken = "8bddb46b564885c3153ebd96d28bdb87c4c8d710";
+    final String authKey = "Basic bW9iaWxlOnRlbXBQQHNzdzByZA==";
+
+    User match;
+    Driver driver;
 
     Retrofit retrofit;
     RequestAPI request;
 
     public Parser() {
+        match = new User();
+        driver = new Driver();
+
         retrofit = new Retrofit.Builder()
                 .baseUrl(apiUrl)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -30,11 +35,8 @@ public class Parser {
         request = retrofit.create(RequestAPI.class);
     }
 
-    public Driver checkAccount(final Context context, final Account user) {
-        final User[] match = {null};
-        final Driver[] result = {null};
-
-        Call<List<User>> callUsers = request.getUsers("json");
+    public User getUser(final Context context, final Account user) {
+        Call<List<User>> callUsers = request.getUsers(authKey, "json");
         callUsers.enqueue(new Callback<List<User>>() {
 
             @Override
@@ -49,7 +51,7 @@ public class Parser {
                 for (User acc : users) {
                     if (acc.getUsername().equals(user.getUser())
                             || acc.getEmail().equals(user.getUser())) {
-                        match[0] = acc;
+                        match = acc;
                     }
                 }
             }
@@ -60,9 +62,13 @@ public class Parser {
             }
         });
 
-        if (match[0] == null)
-            return null;
 
+        String s = match.getId() + " " + match.getUsername() + " " + match.getEmail();
+        Toast.makeText(context, s, Toast.LENGTH_LONG).show();
+        return match;
+    }
+
+    public Driver getDriver(final Context context, final User user) {
         Call<List<Driver>> callDrivers = request.getDrivers("json");
         callDrivers.enqueue(new Callback<List<Driver>>() {
 
@@ -73,11 +79,13 @@ public class Parser {
                     return;
                 }
 
-                final List<Driver> drivers = response.body();
+                List<Driver> drivers = response.body();
 
                 for (Driver driver : drivers) {
-                    if (driver.getUser() == match[0].getId())
-                        result[0] = driver;
+                    Toast.makeText(context, String.valueOf(user.getUsername()), Toast.LENGTH_LONG).show();
+
+//                    if (driver.getUser() == user.getId()) {
+//                    }
                 }
             }
 
@@ -87,7 +95,7 @@ public class Parser {
             }
         });
 
-        return result[0];
+        return driver;
     }
 
     public Institution getInstitutionById(final int id) {
