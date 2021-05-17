@@ -21,6 +21,7 @@
         android:layout_marginTop="80dp"
         android:text="Welcome Driver"
         android:textColor="@android:color/white"
+        android:background="@drawable/borders"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,6 +41,8 @@
         android:hint="@string/prompt_email"
         android:inputType="textEmailAddress"
         android:selectAllOnFocus="true"
+        android:backgroundTint="@android:color/primary_text_dark"
+        android:textColorHint="#ffffff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -53,6 +56,8 @@
         android:layout_marginEnd="24dp"
         android:autofillHints=""
         android:hint="@string/prompt_password"
+        android:backgroundTint="@android:color/primary_text_dark"
+        android:textColorHint="#ffffff"
         android:imeActionLabel="@string/action_sign_in_short"
         android:imeOptions="actionDone"
         android:inputType="textPassword"
@@ -63,20 +68,24 @@
 
     <Button
         android:id="@+id/login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="167dp"
+        android:layout_height="54dp"
         android:layout_gravity="start"
-        android:layout_marginStart="48dp"
         android:layout_marginTop="64dp"
-        android:layout_marginEnd="48dp"
         android:layout_marginBottom="64dp"
+        android:background="@drawable/mybutton"
         android:enabled="true"
         android:text="@string/action_sign_in"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.852"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password"
-        app:layout_constraintVertical_bias="0.674" />
+        app:layout_constraintVertical_bias="0.669"
+
+        />
 
     <ProgressBar
         android:id="@+id/loading"
