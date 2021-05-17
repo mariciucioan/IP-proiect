@@ -1,6 +1,7 @@
 package com.caramelpanda.driversapp.ui.main;
 
 import android.content.Context;
+import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -9,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
+import com.caramelpanda.driversapp.MainActivity;
 import com.caramelpanda.driversapp.R;
 import com.caramelpanda.driversapp.ui.main.tabs.MapsFragment;
 import com.caramelpanda.driversapp.ui.main.tabs.SettingsFragment;
@@ -36,6 +38,10 @@ public class SectionsPagerAdapter extends FragmentStatePagerAdapter {
         switch (position) {
             case 0:
                 fragment = new UserFragment();
+
+                Bundle b = new Bundle();
+                b.putSerializable("user", MainActivity.getAccount());
+                fragment.setArguments(b);
                 break;
             case 1:
                 fragment = new MapsFragment();
