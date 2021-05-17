@@ -15,6 +15,7 @@ public class Account implements Serializable {
     public Account(User user, Driver driver, Institution institution) {
         this.user = user;
         this.institution = institution;
+        this.driver = driver;
     }
 
     public User getUser() {

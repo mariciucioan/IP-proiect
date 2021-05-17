@@ -29,14 +29,12 @@ public class UserFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        account = (Account) getArguments().getSerializable("user");
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-
-        account = (Account) getActivity().getIntent().getSerializableExtra("user");
         return inflater.inflate(R.layout.fragment_user, container, false);
     }
 
@@ -70,8 +68,11 @@ public class UserFragment extends Fragment {
             }
         });
 
-        System.out.println(account);
+        final String status = "STATUS: " + (account.getDriver().isDisponibil() ? "ON DELIVERY" : "WAITING");
+        final String workingAt = "Working at: " + account.getInstitution().getName();
 
+        workingAtTextView.setText(workingAt);
+        statusTextView.setText(status);
 
 //        workingAtTextView.setText(account.getInstitution().getName());
 //        statusTextView.setText(account.getDriver().isDisponibil() ? "WAITING" : "DELIVERING");
