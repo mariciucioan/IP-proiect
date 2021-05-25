@@ -10,11 +10,17 @@ public class Institution implements Serializable {
     @SerializedName("nume")
     private String name;
 
+    private String adresa;
+
     public int getId() {
         return id;
     }
 
     public String getName() {
         return name;
+    }
+
+    public String getAdresa() {
+        return adresa;
     }
 }

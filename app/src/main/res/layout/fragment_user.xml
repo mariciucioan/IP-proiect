@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -71,7 +70,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/deliverTo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingStart="80dp"
@@ -83,7 +82,7 @@
         android:textColor="@android:color/white"/>
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/deliveryDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingStart="80dp"
@@ -95,7 +94,7 @@
         android:textColor="@android:color/white"/>
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/deliveryDue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingStart="80dp"
@@ -107,7 +106,7 @@
         android:textColor="@android:color/white"/>
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/products"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingStart="80dp"
@@ -115,8 +114,8 @@
         android:paddingEnd="0dp"
         android:paddingBottom="2dp"
         android:text="@string/products_to_deliver"
-        android:textSize="16sp"
-        android:textColor="@android:color/white"/>
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
 
 
 </LinearLayout>

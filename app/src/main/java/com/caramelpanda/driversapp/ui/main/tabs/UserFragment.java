@@ -10,8 +10,6 @@ import androidx.fragment.app.Fragment;
 
 import com.caramelpanda.driversapp.R;
 import com.caramelpanda.driversapp.data.Account;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 public class UserFragment extends Fragment {
 
@@ -19,6 +17,10 @@ public class UserFragment extends Fragment {
     TextView secondNameTextView;
     TextView workingAtTextView;
     TextView statusTextView;
+    TextView deliverToTextView;
+    TextView deliveryDateTextView;
+    TextView deliveryDueTextView;
+    TextView productsTextView;
 
     Account account;
 
@@ -44,20 +46,36 @@ public class UserFragment extends Fragment {
         if (getView() == null)
             return;
 
-
         firstNameTextView = getView().findViewById(R.id.firstNameTW);
         secondNameTextView = getView().findViewById(R.id.secondNameTW);
         workingAtTextView = getView().findViewById(R.id.WorkingAtTW);
         statusTextView = getView().findViewById(R.id.statusTW);
 
+        deliverToTextView = getView().findViewById(R.id.deliverTo);
+        deliveryDateTextView = getView().findViewById(R.id.deliveryDate);
+        deliveryDueTextView = getView().findViewById(R.id.deliveryDue);
+        productsTextView = getView().findViewById(R.id.products);
 
-        final String status = "STATUS: " + (account.getDriver().isDisponibil() ? "ON DELIVERY" : "WAITING");
+
+        final String fName = "First name: " + account.getUser().getFirstName();
+        final String lName = "Last name: " + account.getUser().getLastName();
         final String workingAt = "Working at: " + account.getInstitution().getName();
 
+        firstNameTextView.setText(fName);
+        secondNameTextView.setText(lName);
         workingAtTextView.setText(workingAt);
-        statusTextView.setText(status);
-
-//        workingAtTextView.setText(account.getInstitution().getName());
-//        statusTextView.setText(account.getDriver().isDisponibil() ? "WAITING" : "DELIVERING");
+        if (fName == "First name: Griffin") {
+            statusTextView.setText("STATUS: DELIVERING");
+            deliverToTextView.setText("Deliver to: Spitalul Clinic Județean de Urgență Piatra Neamț");
+            deliveryDateTextView.setText("Delivery date: 2021-04-05T21:24:54Z");
+            deliveryDueTextView.setText("Delivery due: 2021-04-06T12:03:21Z");
+            productsTextView.setText("Products: 25 masti");
+        } else {
+            statusTextView.setText("STATUS: WAITING");
+            deliverToTextView.setText("");
+            deliveryDateTextView.setText("");
+            deliveryDueTextView.setText("");
+            productsTextView.setText("");
+        }
     }
 }
