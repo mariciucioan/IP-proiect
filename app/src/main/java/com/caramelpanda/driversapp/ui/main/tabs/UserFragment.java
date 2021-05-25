@@ -44,29 +44,12 @@ public class UserFragment extends Fragment {
         if (getView() == null)
             return;
 
-        FloatingActionButton fabSupport = getView().findViewById(R.id.fabSupport);
-        FloatingActionButton fabRefill = getView().findViewById(R.id.fabRefill);
 
         firstNameTextView = getView().findViewById(R.id.firstNameTW);
         secondNameTextView = getView().findViewById(R.id.secondNameTW);
         workingAtTextView = getView().findViewById(R.id.WorkingAtTW);
         statusTextView = getView().findViewById(R.id.statusTW);
 
-        fabSupport.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "TO-DO: REAL-TIME SUPPORT CHAT HERE", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
-        fabRefill.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "TO-DO: REFILL RECEIPTS SAVE AND UPLOAD TO CLOUD", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         final String status = "STATUS: " + (account.getDriver().isDisponibil() ? "ON DELIVERY" : "WAITING");
         final String workingAt = "Working at: " + account.getInstitution().getName();
