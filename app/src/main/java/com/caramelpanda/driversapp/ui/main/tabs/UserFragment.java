@@ -64,7 +64,7 @@ public class UserFragment extends Fragment {
         firstNameTextView.setText(fName);
         secondNameTextView.setText(lName);
         workingAtTextView.setText(workingAt);
-        if (fName == "First name: Griffin") {
+        if (account.getUser().getFirstName().equals("Griffin")) {
             statusTextView.setText("STATUS: DELIVERING");
             deliverToTextView.setText("Deliver to: Spitalul Clinic Județean de Urgență Piatra Neamț");
             deliveryDateTextView.setText("Delivery date: 2021-04-05T21:24:54Z");
