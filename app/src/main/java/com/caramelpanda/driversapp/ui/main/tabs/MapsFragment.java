@@ -15,6 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
+import com.caramelpanda.driversapp.MainActivity;
 import com.caramelpanda.driversapp.R;
 import com.caramelpanda.driversapp.data.Account;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -96,7 +97,8 @@ public class MapsFragment extends Fragment implements
 
         setupGoogleMapScreenSettings(googleMap);
 
-        drawRoute("Strada Tineretului 28-30, Roman", "Bulevardul Traian 1, Piatra Neamț");
+        if (MainActivity.getAccount().getUser().getFirstName().equals("Griffin"))
+            drawRoute("Strada Tineretului 28-30, Roman", "Bulevardul Traian 1, Piatra Neamț");
     }
 
     private void drawRoute(String origin, String destination) {
